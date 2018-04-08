@@ -23,6 +23,7 @@ def ledGet():
 
 @app.route("/led", methods=['POST'])
 def ledPost():
+    print("gpios are setting")
     GPIO.setmode(GPIO.BOARD)  # Set the board mode to numbers pins by physical location
     GPIO.setup(LedPin, GPIO.OUT)  # Set pin mode as output
     GPIO.output(LedPin, GPIO.HIGH)  # Set pin to high(+3.3V) to off the led
