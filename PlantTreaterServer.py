@@ -24,19 +24,20 @@ def ledGet():
 @app.route("/led", methods=['POST'])
 def ledPost():
     print("gpios are setting")
+    GPIO.setmode(GPIO.BOARD)  # Set the board mode to numbers pins by physical location
+    GPIO.setup(LedPin, GPIO.OUT)  # Set pin mode as output
     GPIO.output(LedPin, GPIO.LOW)  # led on
     return jsonify({'data': 'open req!'})
 
 
 @app.route("/led", methods=['DELETE'])
 def ledDelete():
+    GPIO.setmode(GPIO.BOARD)  # Set the board mode to numbers pins by physical location
+    GPIO.setup(LedPin, GPIO.OUT)  # Set pin mode as output
     GPIO.output(LedPin, GPIO.HIGH)  # led off
-    GPIO.cleanup()
     return jsonify({'data': 'open req!'})
 
 
 if __name__ == '__main__':
-    GPIO.setmode(GPIO.BOARD)  # Set the board mode to numbers pins by physical location
-    GPIO.setup(LedPin, GPIO.OUT)  # Set pin mode as output
     app.debug = True
     app.run(host='0.0.0.0', port=80)
