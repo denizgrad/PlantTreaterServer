@@ -26,7 +26,7 @@ def ledPost():
     print("gpios are setting")
     GPIO.setmode(GPIO.BOARD)  # Set the board mode to numbers pins by physical location
     GPIO.setup(LedPin, GPIO.OUT)  # Set pin mode as output
-    GPIO.output(LedPin, GPIO.LOW)  # led on
+    GPIO.output(LedPin, GPIO.HIGH)  # led on
     return jsonify({'data': 'open req!'})
 
 
@@ -34,7 +34,24 @@ def ledPost():
 def ledDelete():
     GPIO.setmode(GPIO.BOARD)  # Set the board mode to numbers pins by physical location
     GPIO.setup(LedPin, GPIO.OUT)  # Set pin mode as output
-    GPIO.output(LedPin, GPIO.HIGH)  # led off
+    GPIO.output(LedPin, GPIO.LOW)  # led off
+    return jsonify({'data': 'open req!'})
+
+
+@app.route("/ledOn", methods=['GET'])
+def ledOnGet():
+    print("gpios are setting")
+    GPIO.setmode(GPIO.BOARD)  # Set the board mode to numbers pins by physical location
+    GPIO.setup(LedPin, GPIO.OUT)  # Set pin mode as output
+    GPIO.output(LedPin, GPIO.HIGH)  # led on
+    return jsonify({'data': 'open req!'})
+
+
+@app.route("/ledOff", methods=['GET'])
+def ledOffGet():
+    GPIO.setmode(GPIO.BOARD)  # Set the board mode to numbers pins by physical location
+    GPIO.setup(LedPin, GPIO.OUT)  # Set pin mode as output
+    GPIO.output(LedPin, GPIO.LOW)  # led off
     return jsonify({'data': 'open req!'})
 
 
