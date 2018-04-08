@@ -31,7 +31,7 @@ def ledPost():
 
 
 @app.route("/led", methods=['DELETE'])
-def ledPost():
+def ledDelete():
     GPIO.output(LedPin, GPIO.HIGH)  # led off
     GPIO.cleanup()
     return jsonify({'data': 'open req!'})
