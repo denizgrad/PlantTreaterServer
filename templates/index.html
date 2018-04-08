@@ -5,6 +5,12 @@
     <title>Plant Treater</title>
 </head>
 <body>
-<b> Lan {{ name }}! saat {{ tarih }} olmuş!! </b>
+<ul>
+    <b> Sensor Name {{ sensor.name }}, status {{ sensor.status }}</b>
+{% for user in users %}
+  <li>Sensor Name {{ sensor.name }}, status {{ sensor.status }}, <a href="{{ sensor.url }}"></a></li>
+{% endfor %}
+</ul>
+
 </body>
 </html>
