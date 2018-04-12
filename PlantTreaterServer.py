@@ -66,6 +66,11 @@ def action(changePin, action):
     return render_template('led.html', **templateData)
 
 
+@app.route("/soil")
+def led():
+    return render_template('soil.html')
+
+
 if __name__ == '__main__':
     app.debug = True
     app.run(host='0.0.0.0', port=80)
