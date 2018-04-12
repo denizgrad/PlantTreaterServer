@@ -3,14 +3,14 @@ from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
-GPIO.setmode(GPIO.BCM)
+GPIO.setmode(GPIO.BOARD)
 
 # Create a dictionary called pins to store the pin number, name, and pin state:
 pins = {
-    32: {'name': 'top red', 'state': GPIO.LOW},
-    33: {'name': 'top green', 'state': GPIO.LOW},
-    35: {'name': 'bottom red', 'state': GPIO.LOW},
-    37: {'name': 'bottom green', 'state': GPIO.LOW}
+    32: {'name': 'coffee maker', 'state': GPIO.LOW},
+    33: {'name': 'lamp', 'state': GPIO.LOW},
+    35: {'name': 'lamp', 'state': GPIO.LOW},
+    37: {'name': 'lamp', 'state': GPIO.LOW}
 }
 
 # Set each pin as an output and make it low:
@@ -20,7 +20,7 @@ for pin in pins:
 
 
 @app.route("/")
-def main():
+def led():
     # For each pin, read the pin state and store it in the pins dictionary:
     for pin in pins:
         pins[pin]['state'] = GPIO.input(pin)
@@ -28,16 +28,18 @@ def main():
     templateData = {
         'pins': pins
     }
-    # Pass the template data into the template main.html and return it to the user
+    # Pass the template data into the template led.html and return it to the user
     return render_template('led.html', **templateData)
 
 
 # The function below is executed when someone requests a URL with the pin number and action in it:
 @app.route("/<changePin>/<action>")
 def action(changePin, action):
+    # Convert the pin from the URL into an integer:
     changePin = int(changePin)
+    # Get the device name for the pin being changed:
     deviceName = pins[changePin]['name']
-
+    # If the action part of the URL is "on," execute the code indented below:
     if action == "on":
         # Set the pin high:
         GPIO.output(changePin, GPIO.HIGH)
@@ -61,8 +63,9 @@ def action(changePin, action):
         'pins': pins
     }
 
-    return render_template('main.html', **templateData)
+    return render_template('led.html', **templateData)
 
 
-if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=80, debug=True)
+if __name__ == '__main__':
+    app.debug = True
+    app.run(host='0.0.0.0', port=80)
