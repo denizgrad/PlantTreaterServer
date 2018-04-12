@@ -7,10 +7,10 @@ GPIO.setmode(GPIO.BOARD)
 
 # Create a dictionary called pins to store the pin number, name, and pin state:
 pins = {
-    32: {'name': 'coffee maker', 'state': GPIO.LOW},
-    33: {'name': 'lamp', 'state': GPIO.LOW},
-    35: {'name': 'lamp', 'state': GPIO.LOW},
-    37: {'name': 'lamp', 'state': GPIO.LOW}
+    32: {'name': 'Red Top', 'state': GPIO.LOW},
+    33: {'name': 'Green Top', 'state': GPIO.LOW},
+    35: {'name': 'Red Down', 'state': GPIO.LOW},
+    37: {'name': 'Green Down', 'state': GPIO.LOW}
 }
 
 # Set each pin as an output and make it low:
