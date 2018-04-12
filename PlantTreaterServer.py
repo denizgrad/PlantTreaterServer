@@ -32,6 +32,8 @@ sensors = {
     1: {'humidity': humidity, 'temperature': temperature},
     2: {'humidity': humidity2, 'temperature': temperature2},
 }
+
+
 @app.route("/")
 def led():
     # For each pin, read the pin state and store it in the pins dictionary:
@@ -82,9 +84,9 @@ def action(changePin, action):
 @app.route("/soil")
 def soil():
     templateData = {
-        'sensors': sensors,
+        'sensors': sensors
     }
-    return render_template('soil.html' **templateData)
+    return render_template('soil.html', **templateData)
 
 
 if __name__ == '__main__':
