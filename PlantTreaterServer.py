@@ -2,7 +2,7 @@ import RPi.GPIO as GPIO
 from flask import Flask, render_template, request
 
 app = Flask(__name__)
-
+GPIO.cleanup()
 GPIO.setmode(GPIO.BOARD)
 
 # Create a dictionary called pins to store the pin number, name, and pin state:
