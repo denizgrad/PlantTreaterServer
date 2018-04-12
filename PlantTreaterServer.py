@@ -1,60 +1,68 @@
-from flask import Flask
-from flask import jsonify
 import RPi.GPIO as GPIO
+from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
-LedPin = 32    # pin11
+GPIO.setmode(GPIO.BCM)
 
-def setup():
-        GPIO.setmode(GPIO.BOARD)       # Set the board mode to numbers pins by physical location
-        GPIO.setup(LedPin, GPIO.OUT)   # Set pin mode as output
-        GPIO.output(LedPin, GPIO.HIGH) # Set pin to high(+3.3V) to off the led
+# Create a dictionary called pins to store the pin number, name, and pin state:
+pins = {
+    32: {'name': 'top red', 'state': GPIO.LOW},
+    33: {'name': 'top green', 'state': GPIO.LOW},
+    35: {'name': 'bottom red', 'state': GPIO.LOW},
+    37: {'name': 'bottom green', 'state': GPIO.LOW}
+}
+
+# Set each pin as an output and make it low:
+for pin in pins:
+    GPIO.setup(pin, GPIO.OUT)
+    GPIO.output(pin, GPIO.LOW)
+
 
 @app.route("/")
-def hello():
-    return jsonify({'text':'Hello World!'})
+def main():
+    # For each pin, read the pin state and store it in the pins dictionary:
+    for pin in pins:
+        pins[pin]['state'] = GPIO.input(pin)
+    # Put the pin dictionary into the template data dictionary:
+    templateData = {
+        'pins': pins
+    }
+    # Pass the template data into the template main.html and return it to the user
+    return render_template('led.html', templateData)
 
 
-@app.route("/led", methods=['GET'])
-def ledGet():
-    return jsonify({'data': 'read req'})
+# The function below is executed when someone requests a URL with the pin number and action in it:
+@app.route("/<changePin>/<action>")
+def action(changePin, action):
+    changePin = int(changePin)
+    deviceName = pins[changePin]['name']
+
+    if action == "on":
+        # Set the pin high:
+        GPIO.output(changePin, GPIO.HIGH)
+        # Save the status message to be passed into the template:
+        message = "Turned " + deviceName + " on."
+    if action == "off":
+        GPIO.output(changePin, GPIO.LOW)
+        message = "Turned " + deviceName + " off."
+    if action == "toggle":
+        # Read the pin and set it to whatever it isn't (that is, toggle it):
+        GPIO.output(changePin, not GPIO.input(changePin))
+        message = "Toggled " + deviceName + "."
+
+    # For each pin, read the pin state and store it in the pins dictionary:
+    for pin in pins:
+        pins[pin]['state'] = GPIO.input(pin)
+
+    # Along with the pin dictionary, put the message into the template data dictionary:
+    templateData = {
+        'message': message,
+        'pins': pins
+    }
+
+    return render_template('main.html', **templateData)
 
 
-@app.route("/led", methods=['POST'])
-def ledPost():
-    print("gpios are setting")
-    GPIO.setmode(GPIO.BOARD)  # Set the board mode to numbers pins by physical location
-    GPIO.setup(LedPin, GPIO.OUT)  # Set pin mode as output
-    GPIO.output(LedPin, GPIO.HIGH)  # led on
-    return jsonify({'data': 'open req!'})
-
-
-@app.route("/led", methods=['DELETE'])
-def ledDelete():
-    GPIO.setmode(GPIO.BOARD)  # Set the board mode to numbers pins by physical location
-    GPIO.setup(LedPin, GPIO.OUT)  # Set pin mode as output
-    GPIO.output(LedPin, GPIO.LOW)  # led off
-    return jsonify({'data': 'open req!'})
-
-
-@app.route("/ledOn", methods=['GET'])
-def ledOnGet():
-    print("gpios are setting")
-    GPIO.setmode(GPIO.BOARD)  # Set the board mode to numbers pins by physical location
-    GPIO.setup(LedPin, GPIO.OUT)  # Set pin mode as output
-    GPIO.output(LedPin, GPIO.HIGH)  # led on
-    return jsonify({'data': 'open req!'})
-
-
-@app.route("/ledOff", methods=['GET'])
-def ledOffGet():
-    GPIO.setmode(GPIO.BOARD)  # Set the board mode to numbers pins by physical location
-    GPIO.setup(LedPin, GPIO.OUT)  # Set pin mode as output
-    GPIO.output(LedPin, GPIO.LOW)  # led off
-    return jsonify({'data': 'open req!'})
-
-
-if __name__ == '__main__':
-    app.debug = True
-    app.run(host='0.0.0.0', port=80)
+if __name__ == "__main__":
+    app.run(host='0.0.0.0', port=80, debug=True)
