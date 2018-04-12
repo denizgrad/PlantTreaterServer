@@ -1,12 +1,20 @@
 <!DOCTYPE html>
 <head>
-   <title>Plant Treater</title>
+    <title>Plant Treater</title>
     <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
-    <body>
-        <p>
-            Current value: {{ soil }}
-        </p>
-    </body>
+<body>
+<table>
+<th>No</th><th>Humidity</th><th>Temperature</th>
+{% for sensor in sensors %}
+<TR>
+    <TD>{{sensor}}</TD>
+   <TD>{{sensors[sensor].humidity}} %</TD>
+   <TD>{{sensors[sensor].temperature}} C*</TD>
+</TR>
+{% endfor %}
+</table>
+
+</body>
 </html>

@@ -1,4 +1,5 @@
 import RPi.GPIO as GPIO
+import Adafruit_DHT
 from flask import Flask, render_template, request
 
 app = Flask(__name__)
@@ -18,7 +19,19 @@ for pin in pins:
     GPIO.setup(pin, GPIO.OUT)
     GPIO.output(pin, GPIO.LOW)
 
+sensor = Adafruit_DHT.DHT22
+sensor2 = Adafruit_DHT.DHT11
 
+pin = 17
+pin2 = 27
+
+humidity, temperature = Adafruit_DHT.read_retry(sensor, pin)
+humidity2, temperature2 = Adafruit_DHT.read_retry(sensor2, pin2)
+
+sensors = {
+    1: {'humidity': humidity, 'temperature': temperature},
+    2: {'humidity': humidity2, 'temperature': temperature2},
+}
 @app.route("/")
 def led():
     # For each pin, read the pin state and store it in the pins dictionary:
@@ -68,7 +81,10 @@ def action(changePin, action):
 
 @app.route("/soil")
 def soil():
-    return render_template('soil.html')
+    templateData = {
+        'sensors': sensors,
+    }
+    return render_template('soil.html' **templateData)
 
 
 if __name__ == '__main__':
