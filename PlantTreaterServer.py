@@ -29,7 +29,7 @@ def main():
         'pins': pins
     }
     # Pass the template data into the template main.html and return it to the user
-    return render_template('led.html', templateData)
+    return render_template('led.html', **templateData)
 
 
 # The function below is executed when someone requests a URL with the pin number and action in it:
