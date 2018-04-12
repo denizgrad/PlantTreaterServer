@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="04bb8ff7-3ce5-48c1-a58e-6c5c4b678510" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/favicon.ico" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/SensorManager.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/sensor-mapping.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/favicon.ico" afterPath="$PROJECT_DIR$/static/favicon.ico" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -31,8 +29,8 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="favicon.ico" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/favicon.ico">
+      <file leaf-file-name="favicon.ico" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/static/favicon.ico">
           <provider selected="true" editor-type-id="images">
             <state />
           </provider>
@@ -48,11 +46,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="led.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="led.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/led.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="3" column="55" lean-forward="false" selection-start-line="3" selection-start-column="55" selection-end-line="3" selection-end-column="55" />
+            <state relative-caret-position="125">
+              <caret line="5" column="7" lean-forward="true" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -106,9 +104,9 @@
         <option value="$PROJECT_DIR$/sensor-mapping.json" />
         <option value="$PROJECT_DIR$/SensorManager.py" />
         <option value="$PROJECT_DIR$/Led.py" />
-        <option value="$PROJECT_DIR$/templates/led.html" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/PlantTreaterServer.py" />
+        <option value="$PROJECT_DIR$/templates/led.html" />
       </list>
     </option>
   </component>
@@ -146,6 +144,11 @@
               <item name="PlantTreaterServer" type="b2602c69:ProjectViewProjectNode" />
               <item name="PlantTreaterServer" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="PlantTreaterServer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PlantTreaterServer" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -159,6 +162,11 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\deniz\PycharmProjects\PlantTreaterServer\static" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -319,7 +327,21 @@
       <option name="project" value="LOCAL" />
       <updated>1523558270124</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="led sayfa komple">
+      <created>1523558537129</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1523558537129</updated>
+    </task>
+    <task id="LOCAL-00018" summary="led sayfa komple">
+      <created>1523558707807</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1523558707807</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -535,14 +557,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Led.py" />
-    <entry file="file://$PROJECT_DIR$/templates/led.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="3" column="55" lean-forward="false" selection-start-line="3" selection-start-column="55" selection-end-line="3" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/static/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -577,9 +591,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/favicon.ico">
+    <entry file="file://$PROJECT_DIR$/static/favicon.ico">
       <provider selected="true" editor-type-id="images">
         <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/led.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="5" column="7" lean-forward="true" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
+          <folding />
+        </state>
       </provider>
     </entry>
   </component>
