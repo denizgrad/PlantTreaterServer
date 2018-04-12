@@ -67,7 +67,7 @@ def action(changePin, action):
 
 
 @app.route("/soil")
-def led():
+def soil():
     return render_template('soil.html')
 
 
