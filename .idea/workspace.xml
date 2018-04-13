@@ -3,7 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="7dbdc904-78af-4942-ab88-ad8d1daa81b8" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/templates/led.html" afterPath="$PROJECT_DIR$/templates/led.html" />
+      <change beforePath="$PROJECT_DIR$/Adafruit_DHT/Beaglebone_Black.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/Adafruit_DHT/Raspberry_Pi.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/Adafruit_DHT/Raspberry_Pi_2.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/Adafruit_DHT/Test.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/Adafruit_DHT/__init__.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/Adafruit_DHT/common.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/Adafruit_DHT/platform_detect.py" afterPath="" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -62,8 +68,8 @@
       <file leaf-file-name="workspace.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="175">
-              <caret line="14" column="38" lean-forward="false" selection-start-line="14" selection-start-column="38" selection-end-line="14" selection-end-column="38" />
+            <state relative-caret-position="150">
+              <caret line="13" column="38" lean-forward="false" selection-start-line="13" selection-start-column="38" selection-end-line="13" selection-end-column="38" />
               <folding />
             </state>
           </provider>
@@ -227,7 +233,14 @@
       <option name="project" value="LOCAL" />
       <updated>1523634464723</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="soil okey">
+      <created>1523634491928</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1523634491928</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -281,8 +294,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="14" column="38" lean-forward="false" selection-start-line="14" selection-start-column="38" selection-end-line="14" selection-end-column="38" />
+        <state relative-caret-position="150">
+          <caret line="13" column="38" lean-forward="false" selection-start-line="13" selection-start-column="38" selection-end-line="13" selection-end-column="38" />
           <folding />
         </state>
       </provider>
