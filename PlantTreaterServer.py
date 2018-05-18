@@ -88,6 +88,12 @@ def soil():
     }
     return render_template('soil.html', **templateData)
 
+@app.route("/water")
+def water():
+    if GPIO.input(21) == GPIO.LOW:
+        GPIO.output(21, GPIO.HIGH)
+    else:
+        GPIO.output(21, GPIO.LOW)
 
 if __name__ == '__main__':
     app.debug = True
