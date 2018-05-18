@@ -1,5 +1,6 @@
 import RPi.GPIO as GPIO
 import Adafruit_DHT
+import time
 from flask import Flask, render_template, request
 
 app = Flask(__name__)
@@ -8,7 +9,7 @@ GPIO.setmode(GPIO.BOARD)
 
 # Create a dictionary called pins to store the pin number, name, and pin state:
 pins = {
-    32: {'name': 'Red Top', 'state': GPIO.LOW},
+    21: {'name': 'WATER', 'state': GPIO.LOW},
     33: {'name': 'Green Top', 'state': GPIO.LOW},
     35: {'name': 'Red Down', 'state': GPIO.LOW},
     37: {'name': 'Green Down', 'state': GPIO.LOW}
@@ -68,6 +69,7 @@ def action(changePin, action):
         GPIO.output(changePin, not GPIO.input(changePin))
         message = "Toggled " + deviceName + "."
 
+    time.delay(1)
     # For each pin, read the pin state and store it in the pins dictionary:
     for pin in pins:
         pins[pin]['state'] = GPIO.input(pin)
