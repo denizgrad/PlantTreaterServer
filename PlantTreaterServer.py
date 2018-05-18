@@ -69,7 +69,7 @@ def action(changePin, action):
         GPIO.output(changePin, not GPIO.input(changePin))
         message = "Toggled " + deviceName + "."
 
-    time.delay(1)
+    time.sleep(1)
     # For each pin, read the pin state and store it in the pins dictionary:
     for pin in pins:
         pins[pin]['state'] = GPIO.input(pin)
