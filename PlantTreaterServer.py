@@ -9,7 +9,7 @@ GPIO.setmode(GPIO.BOARD)
 
 # Create a dictionary called pins to store the pin number, name, and pin state:
 pins = {
-    21: {'name': 'WATER', 'state': GPIO.LOW},
+    27: {'name': 'WATER', 'state': GPIO.LOW},
     33: {'name': 'Green Top', 'state': GPIO.LOW},
     35: {'name': 'Red Down', 'state': GPIO.LOW},
     37: {'name': 'Green Down', 'state': GPIO.LOW}
