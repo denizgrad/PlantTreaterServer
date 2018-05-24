@@ -99,8 +99,10 @@ def action(changePin, action):
     time.sleep(1)
     # For each pin, read the pin state and store it in the pins dictionary:
     for actionPin in actions:
+        app.logger.info('updating pin: ' + actionPin)
         actions[actionPin]['state'] = GPIO.input(actionPin)
 
+    app.logger.info('forwarding %s size actions', len(actions))
     # Along with the pin dictionary, put the message into the template data dictionary:
     templateData = {
         'message': message,
@@ -110,19 +112,19 @@ def action(changePin, action):
     return render_template('led.html', **templateData)
 
 
-@app.route("/water", methods=['post', 'get'])
-def water(second):
+@app.route("/water",)
+def water():
     app.logger.info('water plants')
-    # Convert the pin from the URL into an integer:
+    '''
     if request.method == 'POST':
         second = request.form.get('second')  # access the data inside
         second = int(second)
         app.logger.info('-> water request second %s', second)
-
+    '''
 
     # Get the device name for the pin being changed:
     app.logger.info('watering')
-    response = water.openInterval(second)
+    response = water.openInterval()
     app.logger.info('watering done')
 
     sensorsInit()
