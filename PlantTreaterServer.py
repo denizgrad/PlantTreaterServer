@@ -3,7 +3,7 @@ import Adafruit_DHT
 import time
 from flask import Flask, render_template, redirect, url_for, request
 
-import water_module as water
+import water_module
 
 app = Flask(__name__)
 
@@ -113,23 +113,7 @@ def water():
 
     # Get the device name for the pin being changed:
     app.logger.info('watering')
-    water.openInterval()
-    app.logger.info('watering done')
-
-    sensors = sensorsInit()
-    templateData = {
-        'sensors': sensors
-    }
-    return render_template('soil.html', **templateData)
-
-
-@app.route("/test")
-def test():
-    app.logger.info('water plants')
-
-    # Get the device name for the pin being changed:
-    app.logger.info('watering')
-    water.openInterval()
+    water_module.water()
     app.logger.info('watering done')
 
     sensors = sensorsInit()
