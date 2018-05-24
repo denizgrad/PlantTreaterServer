@@ -1,6 +1,7 @@
 import RPi.GPIO as GPIO
 import Adafruit_DHT
 import subprocess
+import os
 from flask import Flask, render_template, redirect, url_for, request
 
 app = Flask(__name__)
@@ -116,7 +117,7 @@ def water():
     # Get the device name for the pin being changed:
     app.logger.info('watering')
     #water_module.water()
-    process = subprocess.Popen(['watering.sh'], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    process = subprocess.Popen([os.path.join('modules', 'watering.sh')], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     process.wait()  # Wait for process to complete.
 
     # iterate on the stdout line by line
