@@ -1,24 +1,34 @@
 import RPi.GPIO as GPIO
 import Adafruit_DHT
 import time
-from flask import Flask, render_template, request
+from flask import Flask, render_template, redirect, url_for
 
 app = Flask(__name__)
+
+actions = {}
+sensors = {}
 
 GPIO.setmode(GPIO.BOARD)
 
 # Create a dictionary called pins to store the pin number, name, and pin state:
-pins = {
-    36: {'name': 'WATER', 'state': GPIO.LOW},
-    33: {'name': 'Green Top', 'state': GPIO.LOW},
-    35: {'name': 'Red Down', 'state': GPIO.LOW},
-    37: {'name': 'Green Down', 'state': GPIO.LOW}
-}
+def actionsInit():
+    actions = {
+        32: {'name': 'Red Top', 'state': GPIO.LOW},
+        33: {'name': 'Green Top', 'state': GPIO.LOW},
+        35: {'name': 'Red Down', 'state': GPIO.LOW},
+        37: {'name': 'Green Down', 'state': GPIO.LOW}
+    }
 
-# Set each pin as an output and make it low:
-for pin in pins:
-    GPIO.setup(pin, GPIO.OUT)
-    GPIO.output(pin, GPIO.LOW)
+    # Set each pin as an output and make it low:
+    for action in actions:
+        GPIO.setup(action, GPIO.OUT)
+        GPIO.output(action, GPIO.LOW)
+
+def sensorsInit():
+    sensors = {
+        17: {'name': 'DHT 22', 'humidity': '', 'temperature': ''},
+        18: {'name': 'DHT 11', 'humidity': '', 'temperature': ''},
+    }
 
 sensor = Adafruit_DHT.DHT22
 sensor2 = Adafruit_DHT.DHT11
@@ -36,13 +46,18 @@ sensors = {
 
 
 @app.route("/")
+def maim():
+    return redirect(url_for('led'))
+
+
+@app.route("/led")
 def led():
     # For each pin, read the pin state and store it in the pins dictionary:
-    for pin in pins:
-        pins[pin]['state'] = GPIO.input(pin)
+    for action in actions:
+        actions[action]['state'] = GPIO.input(pin)
     # Put the pin dictionary into the template data dictionary:
     templateData = {
-        'pins': pins
+        'pins': actions
     }
     # Pass the template data into the template led.html and return it to the user
     return render_template('led.html', **templateData)
@@ -54,7 +69,7 @@ def action(changePin, action):
     # Convert the pin from the URL into an integer:
     changePin = int(changePin)
     # Get the device name for the pin being changed:
-    deviceName = pins[changePin]['name']
+    deviceName = actions[changePin]['name']
     # If the action part of the URL is "on," execute the code indented below:
     if action == "on":
         # Set the pin high:
@@ -71,13 +86,13 @@ def action(changePin, action):
 
     time.sleep(1)
     # For each pin, read the pin state and store it in the pins dictionary:
-    for pin in pins:
-        pins[pin]['state'] = GPIO.input(pin)
+    for actionPin in actions:
+        actions[actionPin]['state'] = GPIO.input(actionPin)
 
     # Along with the pin dictionary, put the message into the template data dictionary:
     templateData = {
         'message': message,
-        'pins': pins
+        'pins': actions
     }
 
     return render_template('led.html', **templateData)
@@ -90,12 +105,6 @@ def soil():
     }
     return render_template('soil.html', **templateData)
 
-@app.route("/water")
-def water():
-    if GPIO.input(21) == GPIO.LOW:
-        GPIO.output(21, GPIO.HIGH)
-    else:
-        GPIO.output(21, GPIO.LOW)
 
 if __name__ == '__main__':
     app.debug = True
