@@ -4,7 +4,6 @@
     <list default="true" id="7dbdc904-78af-4942-ab88-ad8d1daa81b8" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/PlantTreaterServer.py" afterPath="$PROJECT_DIR$/PlantTreaterServer.py" />
-      <change beforePath="$PROJECT_DIR$/water_module.py" afterPath="$PROJECT_DIR$/water_module.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -21,8 +20,8 @@
       <file leaf-file-name="PlantTreaterServer.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/PlantTreaterServer.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="117" column="4" lean-forward="false" selection-start-line="117" selection-start-column="4" selection-end-line="117" selection-end-column="4" />
+            <state relative-caret-position="634">
+              <caret line="74" column="28" lean-forward="false" selection-start-line="74" selection-start-column="28" selection-end-line="74" selection-end-column="28" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
               </folding>
@@ -82,11 +81,11 @@
       <file leaf-file-name="workspace.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="15" column="38" lean-forward="false" selection-start-line="15" selection-start-column="38" selection-end-line="15" selection-end-column="38" />
+            <state relative-caret-position="350">
+              <caret line="14" column="38" lean-forward="false" selection-start-line="14" selection-start-column="38" selection-end-line="14" selection-end-column="38" />
               <folding>
-                <marker date="1527203514006" expanded="true" signature="40533:40550" ph="..." />
-                <marker date="1527203514006" expanded="true" signature="40533:40581" ph="..." />
+                <marker date="1527203761011" expanded="true" signature="40759:40776" ph="..." />
+                <marker date="1527203761011" expanded="true" signature="40759:40807" ph="..." />
               </folding>
             </state>
           </provider>
@@ -479,7 +478,14 @@
       <option name="project" value="LOCAL" />
       <updated>1527203340409</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="water home trial commit 2. gun 4 water no interval">
+      <created>1527203527532</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1527203527532</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -618,8 +624,8 @@
         <state relative-caret-position="275">
           <caret line="11" column="38" lean-forward="false" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="38" />
           <folding>
-            <marker date="1527203514006" expanded="true" signature="40533:40550" ph="..." />
-            <marker date="1527203514006" expanded="true" signature="40533:40581" ph="..." />
+            <marker date="1527203761011" expanded="true" signature="40759:40776" ph="..." />
+            <marker date="1527203761011" expanded="true" signature="40759:40807" ph="..." />
           </folding>
         </state>
       </provider>
@@ -629,19 +635,19 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1527203514006" expanded="true" signature="40533:40550" ph="..." />
-            <marker date="1527203514006" expanded="true" signature="40533:40581" ph="..." />
+            <marker date="1527203761011" expanded="true" signature="40759:40776" ph="..." />
+            <marker date="1527203761011" expanded="true" signature="40759:40807" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="15" column="38" lean-forward="false" selection-start-line="15" selection-start-column="38" selection-end-line="15" selection-end-column="38" />
+        <state relative-caret-position="350">
+          <caret line="14" column="38" lean-forward="false" selection-start-line="14" selection-start-column="38" selection-end-line="14" selection-end-column="38" />
           <folding>
-            <marker date="1527203514006" expanded="true" signature="40533:40550" ph="..." />
-            <marker date="1527203514006" expanded="true" signature="40533:40581" ph="..." />
+            <marker date="1527203761011" expanded="true" signature="40759:40776" ph="..." />
+            <marker date="1527203761011" expanded="true" signature="40759:40807" ph="..." />
           </folding>
         </state>
       </provider>
@@ -703,8 +709,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/PlantTreaterServer.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="117" column="4" lean-forward="false" selection-start-line="117" selection-start-column="4" selection-end-line="117" selection-end-column="4" />
+        <state relative-caret-position="634">
+          <caret line="74" column="28" lean-forward="false" selection-start-line="74" selection-start-column="28" selection-end-line="74" selection-end-column="28" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
           </folding>

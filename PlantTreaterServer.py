@@ -59,7 +59,6 @@ def root():
 def led():
     app.logger.info('-> led page')
     app.logger.info('actions are: %s', actions)
-
     print('Actions gotten', actions)
     # Put the pin dictionary into the template data dictionary:
     templateData = {
@@ -73,6 +72,7 @@ def led():
 # The function below is executed when someone requests a URL with the pin number and action in it:
 @app.route("/<changePin>/<action>")
 def action(changePin, action):
+    GPIO.setmode(GPIO.BOARD)
     app.logger.info('change pin')
     # Convert the pin from the URL into an integer:
     changePin = int(changePin)
