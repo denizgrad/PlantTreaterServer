@@ -134,7 +134,7 @@ def water(second):
 @app.route("/soil")
 def soil():
     sensors = sensorsInit()
-    print('½s actions gotten', sensors)
+    print('%s actions gotten', sensors)
     templateData = {
         'sensors': sensors
     }
