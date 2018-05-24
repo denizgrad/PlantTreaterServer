@@ -58,7 +58,7 @@ def led():
     app.logger.info('-> led page')
     # Put the pin dictionary into the template data dictionary:
     templateData = {
-        'pins': actions
+        'actions': actions
     }
     # Pass the template data into the template led.html and return it to the user
     return render_template('led.html', **templateData)
