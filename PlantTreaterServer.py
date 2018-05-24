@@ -71,9 +71,6 @@ def led():
 # The function below is executed when someone requests a URL with the pin number and action in it:
 @app.route("/<changePin>/<action>")
 def action(changePin, action):
-    GPIO.setmode(GPIO.BOARD)
-    for action in actions:
-        GPIO.setup(action, GPIO.OUT)
 
     message = ''
     app.logger.info('change pin')
