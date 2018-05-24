@@ -20,8 +20,8 @@
       <file leaf-file-name="PlantTreaterServer.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/PlantTreaterServer.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="245">
-              <caret line="109" column="19" lean-forward="false" selection-start-line="109" selection-start-column="19" selection-end-line="109" selection-end-column="19" />
+            <state relative-caret-position="345">
+              <caret line="131" column="9" lean-forward="false" selection-start-line="131" selection-start-column="4" selection-end-line="131" selection-end-column="9" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
               </folding>
@@ -71,8 +71,8 @@
       <file leaf-file-name="soil.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/soil.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="267">
-              <caret line="15" column="12" lean-forward="true" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="12" />
+            <state relative-caret-position="342">
+              <caret line="18" column="34" lean-forward="true" selection-start-line="18" selection-start-column="34" selection-end-line="18" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -84,8 +84,8 @@
             <state relative-caret-position="350">
               <caret line="14" column="38" lean-forward="false" selection-start-line="14" selection-start-column="38" selection-end-line="14" selection-end-column="38" />
               <folding>
-                <marker date="1527202903313" expanded="true" signature="33717:33734" ph="..." />
-                <marker date="1527202903313" expanded="true" signature="33717:33765" ph="..." />
+                <marker date="1527203107434" expanded="true" signature="34047:34064" ph="..." />
+                <marker date="1527203107434" expanded="true" signature="34047:34095" ph="..." />
               </folding>
             </state>
           </provider>
@@ -96,9 +96,9 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>pins</find>
-      <find>pin</find>
       <find>gotten</find>
       <find>gott</find>
+      <find>pin</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -450,7 +450,14 @@
       <option name="project" value="LOCAL" />
       <updated>1527202755304</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="water home trial commit 2. gun 4 water no interval">
+      <created>1527202915992</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1527202915992</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -559,8 +566,8 @@
         <state relative-caret-position="275">
           <caret line="11" column="38" lean-forward="false" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="38" />
           <folding>
-            <marker date="1527202903313" expanded="true" signature="33717:33734" ph="..." />
-            <marker date="1527202903313" expanded="true" signature="33717:33765" ph="..." />
+            <marker date="1527203107434" expanded="true" signature="34047:34064" ph="..." />
+            <marker date="1527203107434" expanded="true" signature="34047:34095" ph="..." />
           </folding>
         </state>
       </provider>
@@ -570,8 +577,8 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1527202903313" expanded="true" signature="33717:33734" ph="..." />
-            <marker date="1527202903313" expanded="true" signature="33717:33765" ph="..." />
+            <marker date="1527203107434" expanded="true" signature="34047:34064" ph="..." />
+            <marker date="1527203107434" expanded="true" signature="34047:34095" ph="..." />
           </folding>
         </state>
       </provider>
@@ -581,8 +588,8 @@
         <state relative-caret-position="350">
           <caret line="14" column="38" lean-forward="false" selection-start-line="14" selection-start-column="38" selection-end-line="14" selection-end-column="38" />
           <folding>
-            <marker date="1527202903313" expanded="true" signature="33717:33734" ph="..." />
-            <marker date="1527202903313" expanded="true" signature="33717:33765" ph="..." />
+            <marker date="1527203107434" expanded="true" signature="34047:34064" ph="..." />
+            <marker date="1527203107434" expanded="true" signature="34047:34095" ph="..." />
           </folding>
         </state>
       </provider>
@@ -618,8 +625,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/soil.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
-          <caret line="15" column="12" lean-forward="true" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="12" />
+        <state relative-caret-position="342">
+          <caret line="18" column="34" lean-forward="true" selection-start-line="18" selection-start-column="34" selection-end-line="18" selection-end-column="34" />
           <folding />
         </state>
       </provider>
@@ -644,8 +651,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/PlantTreaterServer.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="245">
-          <caret line="109" column="19" lean-forward="false" selection-start-line="109" selection-start-column="19" selection-end-line="109" selection-end-column="19" />
+        <state relative-caret-position="345">
+          <caret line="131" column="9" lean-forward="false" selection-start-line="131" selection-start-column="4" selection-end-line="131" selection-end-column="9" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
           </folding>

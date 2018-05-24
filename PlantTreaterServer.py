@@ -44,8 +44,8 @@ def sensorsInit():
     humidity2, temperature2 = Adafruit_DHT.read_retry(sensor2, pin2)
 
     sensors = {
-        1: {'humidity': humidity, 'temperature': temperature},
-        2: {'humidity': humidity2, 'temperature': temperature2},
+        1: {'name': 'DHT22', 'humidity': humidity, 'temperature': temperature},
+        2: {'name': 'DHT11', 'humidity': humidity2, 'temperature': temperature2},
     }
     return sensors
 
@@ -110,12 +110,22 @@ def action(changePin, action):
 @app.route("/water")
 def water():
     app.logger.info('water plants')
-    '''
-    if request.method == 'POST':
-        second = request.form.get('second')  # access the data inside
-        second = int(second)
-        app.logger.info('-> water request second %s', second)
-    '''
+
+    # Get the device name for the pin being changed:
+    app.logger.info('watering')
+    water.openInterval()
+    app.logger.info('watering done')
+
+    sensors = sensorsInit()
+    templateData = {
+        'sensors': sensors
+    }
+    return render_template('soil.html', **templateData)
+
+
+@app.route("/test")
+def test():
+    app.logger.info('water plants')
 
     # Get the device name for the pin being changed:
     app.logger.info('watering')
