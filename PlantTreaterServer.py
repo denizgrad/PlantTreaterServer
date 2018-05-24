@@ -29,8 +29,8 @@ def actionsInit():
         actions[action]['state'] = GPIO.input(action)
 
     app.logger.info('action gpios are setup and low')
+    return actions
 
-actionsInit()
 
 def sensorsInit():
     sensors = {
@@ -51,8 +51,8 @@ def sensorsInit():
         1: {'humidity': humidity, 'temperature': temperature},
         2: {'humidity': humidity2, 'temperature': temperature2},
     }
+    return sensors
 
-sensorsInit()
 
 @app.route("/")
 def root():
@@ -62,7 +62,9 @@ def root():
 @app.route("/led")
 def led():
     app.logger.info('-> led page')
-    actionsInit()
+    actions = actionsInit()
+
+    print('½s actions gotten', actions)
     # Put the pin dictionary into the template data dictionary:
     templateData = {
         'actions': actions
@@ -111,7 +113,6 @@ def action(changePin, action):
 def water(second):
     app.logger.info('water plants')
     # Convert the pin from the URL into an integer:
-    second
     if request.method == 'POST':
         second = request.form.get('second')  # access the data inside
         second = int(second)
@@ -132,7 +133,8 @@ def water(second):
 
 @app.route("/soil")
 def soil():
-    sensorsInit()
+    sensors = sensorsInit()
+    print('½s actions gotten', sensors)
     templateData = {
         'sensors': sensors
     }
