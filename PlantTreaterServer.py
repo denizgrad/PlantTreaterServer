@@ -7,8 +7,6 @@ import water_module as water
 
 app = Flask(__name__)
 
-actions = {}
-sensors = {}
 app.logger.info('actions, sensors instantiated')
 GPIO.setmode(GPIO.BOARD)
 
@@ -68,7 +66,6 @@ def led():
         'actions': actions
     }
     print('passing template data', templateData)
-    print('passing template data', **templateData)
     # Pass the template data into the template led.html and return it to the user
     return render_template('led.html', **templateData)
 
@@ -136,12 +133,10 @@ def water():
 def soil():
     sensors = sensorsInit()
     print('%s actions gotten', sensors)
-
     templateData = {
         'sensors': sensors
     }
     print('passing template data', templateData)
-    print('passing template data', **templateData)
     return render_template('soil.html', **templateData)
 
 
