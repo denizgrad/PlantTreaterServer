@@ -7,12 +7,12 @@
 <body>
    <h1>Device Listing and Status</h1>
 
-   {% for pin in pins %}
-   <p>The {{ pins[pin].name }}
-   {% if pins[pin].state == true %}
-      is currently on (<a href="/{{pin}}/off">turn off</a>)
+   {% for action in actions %}
+   <p>The {{ actions[action].name }}
+   {% if actions[action].state == true %}
+      is currently on (<a href="/{{action}}/off">turn off</a>)
    {% else %}
-      is currently off (<a href="/{{pin}}/on">turn on</a>)
+      is currently off (<a href="/{{action}}/on">turn on</a>)
    {% endif %}
    </p>
    {% endfor %}
