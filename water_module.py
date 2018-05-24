@@ -3,13 +3,11 @@ import time
 GPIO.setmode(GPIO.BOARD)
 GPIO.setwarnings(False)
 
-def openInterval(seconds):
-    if seconds is None:
-        seconds = 2
+def water():
 
     print("GPIO setup")
     GPIO.setup(18, GPIO.OUT)
-    time.sleep(seconds)
+    time.sleep(3)
 
     print("GPIO cleanup")
     GPIO.cleanup()

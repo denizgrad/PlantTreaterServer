@@ -12,24 +12,22 @@ sensors = {}
 app.logger.info('actions, sensors instantiated')
 GPIO.setmode(GPIO.BOARD)
 
-def actionsInit():
-    # Create a dictionary called pins to store the pin number, name, and pin state:
-    actions = {
-        32: {'name': 'Red Top', 'state': GPIO.LOW},
-        33: {'name': 'Green Top', 'state': GPIO.LOW},
-        35: {'name': 'Red Down', 'state': GPIO.LOW},
-        37: {'name': 'Green Down', 'state': GPIO.LOW}
-    }
-    app.logger.info('%s sized actions created', len(actions))
-    # Set each pin as an output and make it low:
-    for action in actions:
-        GPIO.setup(action, GPIO.OUT)
-        GPIO.output(action, GPIO.LOW)
-        # For each pin, read the pin state and store it in the pins dictionary:    for action in actions:
-        actions[action]['state'] = GPIO.input(action)
+# Create a dictionary called pins to store the pin number, name, and pin state:
+actions = {
+    32: {'name': 'Red Top', 'state': GPIO.LOW},
+    33: {'name': 'Green Top', 'state': GPIO.LOW},
+    35: {'name': 'Red Down', 'state': GPIO.LOW},
+    37: {'name': 'Green Down', 'state': GPIO.LOW}
+}
+app.logger.info('%s sized actions created', len(actions))
+# Set each pin as an output and make it low:
+for action in actions:
+    GPIO.setup(action, GPIO.OUT)
+    GPIO.output(action, GPIO.LOW)
+    # For each pin, read the pin state and store it in the pins dictionary:    for action in actions:
+    actions[action]['state'] = GPIO.input(action)
 
-    app.logger.info('action gpios are setup and low')
-    return actions
+app.logger.info('action gpios are setup and low')
 
 
 def sensorsInit():
@@ -62,13 +60,15 @@ def root():
 @app.route("/led")
 def led():
     app.logger.info('-> led page')
-    actions = actionsInit()
+    app.logger.info('actions are: %s', actions)
 
-    print('%s actions gotten', actions)
+    print('Actions gotten', actions)
     # Put the pin dictionary into the template data dictionary:
     templateData = {
         'actions': actions
     }
+    print('passing template data', templateData)
+    print('passing template data', **templateData)
     # Pass the template data into the template led.html and return it to the user
     return render_template('led.html', **templateData)
 
@@ -80,7 +80,6 @@ def action(changePin, action):
     # Convert the pin from the URL into an integer:
     changePin = int(changePin)
     # Get the device name for the pin being changed:
-    actions = actionsInit()
     deviceName = actions[changePin]['name']
     # If the action part of the URL is "on," execute the code indented below:
     if action == "on":
@@ -96,7 +95,6 @@ def action(changePin, action):
         GPIO.output(changePin, not GPIO.input(changePin))
         message = "Toggled " + deviceName + "."
 
-    time.sleep(1)
     # For each pin, read the pin state and store it in the pins dictionary:
     for actionPin in actions:
         app.logger.info('updating pin: ' + str(actionPin))
@@ -124,7 +122,7 @@ def water():
 
     # Get the device name for the pin being changed:
     app.logger.info('watering')
-    response = water.openInterval()
+    water.openInterval()
     app.logger.info('watering done')
 
     sensorsInit()
@@ -138,9 +136,12 @@ def water():
 def soil():
     sensors = sensorsInit()
     print('%s actions gotten', sensors)
+
     templateData = {
         'sensors': sensors
     }
+    print('passing template data', templateData)
+    print('passing template data', **templateData)
     return render_template('soil.html', **templateData)
 
 
