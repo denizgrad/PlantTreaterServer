@@ -3,8 +3,6 @@ import Adafruit_DHT
 import subprocess
 from flask import Flask, render_template, redirect, url_for, request
 
-import water_module
-
 app = Flask(__name__)
 
 app.logger.info('actions, sensors instantiated')
@@ -76,6 +74,7 @@ def action(changePin, action):
     for action in actions:
         GPIO.setup(action, GPIO.OUT)
 
+    message = ''
     app.logger.info('change pin')
     # Convert the pin from the URL into an integer:
     changePin = int(changePin)
