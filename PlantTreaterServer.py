@@ -106,7 +106,8 @@ def action(changePin, action):
 
     return render_template('led.html', **templateData)
 
-@app.route("/water/<second>", methods=['post', 'get'])
+
+@app.route("/water")
 def action(second):
     app.logger.info('water plants')
     # Convert the pin from the URL into an integer:
@@ -142,11 +143,13 @@ if __name__ == '__main__':
     app.debug = True
     app.run(host='0.0.0.0', port=80)
 
+
 def shutdown_server():
     func = request.environ.get('werkzeug.server.shutdown')
     if func is None:
         raise RuntimeError('Not running with the Werkzeug Server')
     func()
+
 
 @app.route('/shutdown')
 def shutdown():
