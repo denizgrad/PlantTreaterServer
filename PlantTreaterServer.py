@@ -101,13 +101,13 @@ def action(changePin, action):
     # Along with the pin dictionary, put the message into the template data dictionary:
     templateData = {
         'message': message,
-        'pins': actions
+        'actions': actions
     }
 
     return render_template('led.html', **templateData)
 
 
-@app.route("/water",)
+@app.route("/water")
 def water():
     app.logger.info('water plants')
     '''
@@ -122,7 +122,7 @@ def water():
     water.openInterval()
     app.logger.info('watering done')
 
-    sensorsInit()
+    sensors = sensorsInit()
     templateData = {
         'sensors': sensors
     }
