@@ -20,8 +20,8 @@
       <file leaf-file-name="PlantTreaterServer.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/PlantTreaterServer.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1700">
-              <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+            <state relative-caret-position="-375">
+              <caret line="3" column="68" lean-forward="false" selection-start-line="3" selection-start-column="68" selection-end-line="3" selection-end-column="68" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
               </folding>
@@ -72,7 +72,7 @@
             <state relative-caret-position="350">
               <caret line="14" column="38" lean-forward="false" selection-start-line="14" selection-start-column="38" selection-end-line="14" selection-end-column="38" />
               <folding>
-                <marker date="1527197704928" expanded="true" signature="27416:27433" ph="..." />
+                <marker date="1527197721613" expanded="true" signature="27391:27408" ph="..." />
               </folding>
             </state>
           </provider>
@@ -331,7 +331,14 @@
       <option name="project" value="LOCAL" />
       <updated>1527197451547</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="water home trial commit 2. gun 2 comment out soil water">
+      <created>1527197726866</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1527197726866</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -437,7 +444,7 @@
         <state relative-caret-position="275">
           <caret line="11" column="38" lean-forward="false" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="38" />
           <folding>
-            <marker date="1527197704928" expanded="true" signature="27416:27433" ph="..." />
+            <marker date="1527197721613" expanded="true" signature="27391:27408" ph="..." />
           </folding>
         </state>
       </provider>
@@ -447,7 +454,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1527197704928" expanded="true" signature="27416:27433" ph="..." />
+            <marker date="1527197721613" expanded="true" signature="27391:27408" ph="..." />
           </folding>
         </state>
       </provider>
@@ -457,7 +464,7 @@
         <state relative-caret-position="350">
           <caret line="14" column="38" lean-forward="false" selection-start-line="14" selection-start-column="38" selection-end-line="14" selection-end-column="38" />
           <folding>
-            <marker date="1527197704928" expanded="true" signature="27416:27433" ph="..." />
+            <marker date="1527197721613" expanded="true" signature="27391:27408" ph="..." />
           </folding>
         </state>
       </provider>
@@ -509,8 +516,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/PlantTreaterServer.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1700">
-          <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+        <state relative-caret-position="-375">
+          <caret line="3" column="68" lean-forward="false" selection-start-line="3" selection-start-column="68" selection-end-line="3" selection-end-column="68" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
           </folding>
