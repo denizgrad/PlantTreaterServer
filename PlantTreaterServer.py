@@ -3,6 +3,8 @@ import Adafruit_DHT
 import time
 from flask import Flask, render_template, redirect, url_for, request
 
+import water_module as water
+
 app = Flask(__name__)
 
 actions = {}
@@ -10,43 +12,47 @@ sensors = {}
 app.logger.info('actions, sensors instantiated')
 GPIO.setmode(GPIO.BOARD)
 
-# Create a dictionary called pins to store the pin number, name, and pin state:
-actions = {
-    32: {'name': 'Red Top', 'state': GPIO.LOW},
-    33: {'name': 'Green Top', 'state': GPIO.LOW},
-    35: {'name': 'Red Down', 'state': GPIO.LOW},
-    37: {'name': 'Green Down', 'state': GPIO.LOW}
-}
-app.logger.info('%s sized actions created', len(actions))
-# Set each pin as an output and make it low:
-for action in actions:
-    GPIO.setup(action, GPIO.OUT)
-    GPIO.output(action, GPIO.LOW)
-    # For each pin, read the pin state and store it in the pins dictionary:    for action in actions:
-    actions[action]['state'] = GPIO.input(action)
+def actionsInit():
+    # Create a dictionary called pins to store the pin number, name, and pin state:
+    actions = {
+        32: {'name': 'Red Top', 'state': GPIO.LOW},
+        33: {'name': 'Green Top', 'state': GPIO.LOW},
+        35: {'name': 'Red Down', 'state': GPIO.LOW},
+        37: {'name': 'Green Down', 'state': GPIO.LOW}
+    }
+    app.logger.info('%s sized actions created', len(actions))
+    # Set each pin as an output and make it low:
+    for action in actions:
+        GPIO.setup(action, GPIO.OUT)
+        GPIO.output(action, GPIO.LOW)
+        # For each pin, read the pin state and store it in the pins dictionary:    for action in actions:
+        actions[action]['state'] = GPIO.input(action)
 
-app.logger.info('action gpios are setup and low')
-'''
+    app.logger.info('action gpios are setup and low')
+
+actionsInit()
+
 def sensorsInit():
     sensors = {
         17: {'name': 'DHT 22', 'humidity': '', 'temperature': ''},
         18: {'name': 'DHT 11', 'humidity': '', 'temperature': ''},
     }
 
-sensor = Adafruit_DHT.DHT22
-sensor2 = Adafruit_DHT.DHT11
+    sensor = Adafruit_DHT.DHT22
+    sensor2 = Adafruit_DHT.DHT11
 
-pin = 17
-pin2 = 27
+    pin = 17
+    pin2 = 27
 
-humidity, temperature = Adafruit_DHT.read_retry(sensor, pin)
-humidity2, temperature2 = Adafruit_DHT.read_retry(sensor2, pin2)
+    humidity, temperature = Adafruit_DHT.read_retry(sensor, pin)
+    humidity2, temperature2 = Adafruit_DHT.read_retry(sensor2, pin2)
 
-sensors = {
-    1: {'humidity': humidity, 'temperature': temperature},
-    2: {'humidity': humidity2, 'temperature': temperature2},
-}
-'''
+    sensors = {
+        1: {'humidity': humidity, 'temperature': temperature},
+        2: {'humidity': humidity2, 'temperature': temperature2},
+    }
+
+sensorsInit()
 
 @app.route("/")
 def root():
@@ -56,6 +62,7 @@ def root():
 @app.route("/led")
 def led():
     app.logger.info('-> led page')
+    actionsInit()
     # Put the pin dictionary into the template data dictionary:
     templateData = {
         'actions': actions
@@ -67,6 +74,7 @@ def led():
 # The function below is executed when someone requests a URL with the pin number and action in it:
 @app.route("/<changePin>/<action>")
 def action(changePin, action):
+    app.logger.info('change pin')
     # Convert the pin from the URL into an integer:
     changePin = int(changePin)
     # Get the device name for the pin being changed:
@@ -98,15 +106,38 @@ def action(changePin, action):
 
     return render_template('led.html', **templateData)
 
-'''
-@app.route("/soil")
-def soil():
+@app.route("/water/<second>", methods=['post', 'get'])
+def action(second):
+    app.logger.info('water plants')
+    # Convert the pin from the URL into an integer:
+    second
+    if request.method == 'POST':
+        second = request.form.get('second')  # access the data inside
+        second = int(second)
+        app.logger.info('-> water request second %s', second)
+
+
+    # Get the device name for the pin being changed:
+    app.logger.info('watering')
+    response = water.openInterval(second)
+    app.logger.info('watering done')
+
+    sensorsInit()
     templateData = {
         'sensors': sensors
     }
     return render_template('soil.html', **templateData)
 
-'''
+
+@app.route("/soil")
+def soil():
+    sensorsInit()
+    templateData = {
+        'sensors': sensors
+    }
+    return render_template('soil.html', **templateData)
+
+
 if __name__ == '__main__':
     app.debug = True
     app.run(host='0.0.0.0', port=80)

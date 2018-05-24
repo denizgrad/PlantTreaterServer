@@ -9,12 +9,15 @@
 <th>No</th><th>Humidity</th><th>Temperature</th>
 {% for sensor in sensors %}
 <TR>
-    <TD>{{sensor}}</TD>
+    <TD>{{sensors[sensor].name}}</TD>
    <TD>{{sensors[sensor].humidity}} %</TD>
    <TD>{{sensors[sensor].temperature}} C*</TD>
 </TR>
 {% endfor %}
 </table>
+
+<a href="/water/">Water Plants</a>
+
 <a href="/">Home</a>
 </body>
 </html>
