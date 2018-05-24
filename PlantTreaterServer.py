@@ -99,7 +99,7 @@ def action(changePin, action):
     time.sleep(1)
     # For each pin, read the pin state and store it in the pins dictionary:
     for actionPin in actions:
-        app.logger.info('updating pin: ' + actionPin)
+        app.logger.info('updating pin: ' + str(actionPin))
         actions[actionPin]['state'] = GPIO.input(actionPin)
 
     app.logger.info('forwarding %s size actions', len(actions))
