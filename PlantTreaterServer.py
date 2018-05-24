@@ -107,8 +107,8 @@ def action(changePin, action):
     return render_template('led.html', **templateData)
 
 
-@app.route("/water")
-def action(second):
+@app.route("/water/<second>", methods=['post', 'get'])
+def water(second):
     app.logger.info('water plants')
     # Convert the pin from the URL into an integer:
     second
