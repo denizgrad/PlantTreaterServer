@@ -5,7 +5,8 @@ import os
 from flask import Flask, render_template, redirect, url_for, request
 
 app = Flask(__name__)
-
+os.chmod(os.path.join('modules', 'watering.sh'), 0b111101101)
+app.logger.info('watering is executable now')
 app.logger.info('actions, sensors instantiated')
 GPIO.setmode(GPIO.BOARD)
 
@@ -114,6 +115,7 @@ def water():
     # Get the device name for the pin being changed:
     app.logger.info('watering')
     #water_module.water()
+
     process = subprocess.Popen([os.path.join('modules', 'watering.sh')], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     process.wait()  # Wait for process to complete.
 
