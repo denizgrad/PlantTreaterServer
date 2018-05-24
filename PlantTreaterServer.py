@@ -24,6 +24,9 @@ def actionsInit():
         GPIO.setup(action, GPIO.OUT)
         GPIO.output(action, GPIO.LOW)
 
+        # For each pin, read the pin state and store it in the pins dictionary:    for action in actions:
+        actions[action]['state'] = GPIO.input(action)
+
 def sensorsInit():
     sensors = {
         17: {'name': 'DHT 22', 'humidity': '', 'temperature': ''},
@@ -52,9 +55,7 @@ def maim():
 
 @app.route("/led")
 def led():
-    # For each pin, read the pin state and store it in the pins dictionary:
-    for action in actions:
-        actions[action]['state'] = GPIO.input(pin)
+    actionsInit()
     # Put the pin dictionary into the template data dictionary:
     templateData = {
         'pins': actions
@@ -109,3 +110,14 @@ def soil():
 if __name__ == '__main__':
     app.debug = True
     app.run(host='0.0.0.0', port=80)
+
+def shutdown_server():
+    func = request.environ.get('werkzeug.server.shutdown')
+    if func is None:
+        raise RuntimeError('Not running with the Werkzeug Server')
+    func()
+
+@app.route('/shutdown')
+def shutdown():
+    shutdown_server()
+    return 'Server shutting down...'
