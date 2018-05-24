@@ -80,6 +80,7 @@ def action(changePin, action):
     # Convert the pin from the URL into an integer:
     changePin = int(changePin)
     # Get the device name for the pin being changed:
+    actions = actionsInit()
     deviceName = actions[changePin]['name']
     # If the action part of the URL is "on," execute the code indented below:
     if action == "on":
