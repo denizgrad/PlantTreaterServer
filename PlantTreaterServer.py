@@ -1,6 +1,6 @@
 import RPi.GPIO as GPIO
 import Adafruit_DHT
-import time
+import subprocess
 from flask import Flask, render_template, redirect, url_for, request
 
 import water_module
@@ -73,6 +73,9 @@ def led():
 @app.route("/<changePin>/<action>")
 def action(changePin, action):
     GPIO.setmode(GPIO.BOARD)
+    for action in actions:
+        GPIO.setup(action, GPIO.OUT)
+
     app.logger.info('change pin')
     # Convert the pin from the URL into an integer:
     changePin = int(changePin)
@@ -113,7 +116,14 @@ def water():
 
     # Get the device name for the pin being changed:
     app.logger.info('watering')
-    water_module.water()
+    #water_module.water()
+    process = subprocess.Popen(['watering.sh'], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    process.wait()  # Wait for process to complete.
+
+    # iterate on the stdout line by line
+    for line in process.stdout.readlines():
+        print(line)
+
     app.logger.info('watering done')
     sensors = sensorsInit()
     templateData = {
