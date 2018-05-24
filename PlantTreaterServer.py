@@ -64,7 +64,7 @@ def led():
     app.logger.info('-> led page')
     actions = actionsInit()
 
-    print('½s actions gotten', actions)
+    print('%s actions gotten', actions)
     # Put the pin dictionary into the template data dictionary:
     templateData = {
         'actions': actions
@@ -109,7 +109,7 @@ def action(changePin, action):
     return render_template('led.html', **templateData)
 
 
-@app.route("/water/<second>", methods=['post', 'get'])
+@app.route("/water", methods=['post', 'get'])
 def water(second):
     app.logger.info('water plants')
     # Convert the pin from the URL into an integer:
