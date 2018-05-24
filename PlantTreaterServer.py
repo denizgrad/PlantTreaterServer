@@ -7,32 +7,32 @@ app = Flask(__name__)
 
 actions = {}
 sensors = {}
-
+app.logger.info('actions, sensors instantiated')
 GPIO.setmode(GPIO.BOARD)
 
 # Create a dictionary called pins to store the pin number, name, and pin state:
-def actionsInit():
-    actions = {
-        32: {'name': 'Red Top', 'state': GPIO.LOW},
-        33: {'name': 'Green Top', 'state': GPIO.LOW},
-        35: {'name': 'Red Down', 'state': GPIO.LOW},
-        37: {'name': 'Green Down', 'state': GPIO.LOW}
-    }
+actions = {
+    32: {'name': 'Red Top', 'state': GPIO.LOW},
+    33: {'name': 'Green Top', 'state': GPIO.LOW},
+    35: {'name': 'Red Down', 'state': GPIO.LOW},
+    37: {'name': 'Green Down', 'state': GPIO.LOW}
+}
+app.logger.info('%s sized actions created', len(actions))
+# Set each pin as an output and make it low:
+for action in actions:
+    GPIO.setup(action, GPIO.OUT)
+    GPIO.output(action, GPIO.LOW)
+    # For each pin, read the pin state and store it in the pins dictionary:    for action in actions:
+    actions[action]['state'] = GPIO.input(action)
 
-    # Set each pin as an output and make it low:
-    for action in actions:
-        GPIO.setup(action, GPIO.OUT)
-        GPIO.output(action, GPIO.LOW)
-
-        # For each pin, read the pin state and store it in the pins dictionary:    for action in actions:
-        actions[action]['state'] = GPIO.input(action)
-
+app.logger.info('action gpios are setup and low')
+'''
 def sensorsInit():
     sensors = {
         17: {'name': 'DHT 22', 'humidity': '', 'temperature': ''},
         18: {'name': 'DHT 11', 'humidity': '', 'temperature': ''},
     }
-'''
+
 sensor = Adafruit_DHT.DHT22
 sensor2 = Adafruit_DHT.DHT11
 
@@ -49,13 +49,13 @@ sensors = {
 '''
 
 @app.route("/")
-def maim():
+def root():
     return redirect(url_for('led'))
 
 
 @app.route("/led")
 def led():
-    actionsInit()
+    app.logger.info('-> led page')
     # Put the pin dictionary into the template data dictionary:
     templateData = {
         'pins': actions
