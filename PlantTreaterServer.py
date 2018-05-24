@@ -115,7 +115,6 @@ def water():
     app.logger.info('watering')
     water_module.water()
     app.logger.info('watering done')
-
     sensors = sensorsInit()
     templateData = {
         'sensors': sensors
