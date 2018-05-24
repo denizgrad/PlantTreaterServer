@@ -29,7 +29,7 @@ def sensorsInit():
         17: {'name': 'DHT 22', 'humidity': '', 'temperature': ''},
         18: {'name': 'DHT 11', 'humidity': '', 'temperature': ''},
     }
-
+'''
 sensor = Adafruit_DHT.DHT22
 sensor2 = Adafruit_DHT.DHT11
 
@@ -43,7 +43,7 @@ sensors = {
     1: {'humidity': humidity, 'temperature': temperature},
     2: {'humidity': humidity2, 'temperature': temperature2},
 }
-
+'''
 
 @app.route("/")
 def maim():
@@ -97,7 +97,7 @@ def action(changePin, action):
 
     return render_template('led.html', **templateData)
 
-
+'''
 @app.route("/soil")
 def soil():
     templateData = {
@@ -105,7 +105,7 @@ def soil():
     }
     return render_template('soil.html', **templateData)
 
-
+'''
 if __name__ == '__main__':
     app.debug = True
     app.run(host='0.0.0.0', port=80)
