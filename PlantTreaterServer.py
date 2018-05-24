@@ -6,8 +6,7 @@ from flask import Flask, render_template, redirect, url_for, request
 
 app = Flask(__name__)
 os.chmod(os.path.join('modules', 'watering.sh'), 0b111101101)
-app.logger.info('watering is executable now')
-app.logger.info('actions, sensors instantiated')
+print('watering is executable now')
 GPIO.setmode(GPIO.BOARD)
 
 # Create a dictionary called pins to store the pin number, name, and pin state:
@@ -17,7 +16,7 @@ actions = {
     35: {'name': 'Red Down', 'state': GPIO.LOW},
     37: {'name': 'Green Down', 'state': GPIO.LOW}
 }
-app.logger.info('%s sized actions created', len(actions))
+print('%s sized actions created', len(actions))
 # Set each pin as an output and make it low:
 for action in actions:
     GPIO.setup(action, GPIO.OUT)
@@ -25,7 +24,7 @@ for action in actions:
     # For each pin, read the pin state and store it in the pins dictionary:    for action in actions:
     actions[action]['state'] = GPIO.input(action)
 
-app.logger.info('action gpios are setup and low')
+print('action gpios are setup and low')
 
 
 def sensorsInit():
