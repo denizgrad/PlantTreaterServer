@@ -115,7 +115,7 @@ def water():
     app.logger.info('watering')
     #water_module.water()
 
-    os.system("./modules/script.sh")
+    os.system("./modules/watering.sh")
 
 
     app.logger.info('watering done')

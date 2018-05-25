@@ -20,8 +20,8 @@
       <file leaf-file-name="PlantTreaterServer.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/PlantTreaterServer.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="120" column="36" lean-forward="true" selection-start-line="120" selection-start-column="36" selection-end-line="120" selection-end-column="36" />
+            <state relative-caret-position="300">
+              <caret line="117" column="33" lean-forward="false" selection-start-line="117" selection-start-column="33" selection-end-line="117" selection-end-column="33" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
               </folding>
@@ -94,8 +94,8 @@
             <state relative-caret-position="350">
               <caret line="14" column="38" lean-forward="false" selection-start-line="14" selection-start-column="38" selection-end-line="14" selection-end-column="38" />
               <folding>
-                <marker date="1527206520865" expanded="true" signature="44967:44984" ph="..." />
-                <marker date="1527206520865" expanded="true" signature="44967:45015" ph="..." />
+                <marker date="1527206634514" expanded="true" signature="45576:45593" ph="..." />
+                <marker date="1527206634514" expanded="true" signature="45576:45624" ph="..." />
               </folding>
             </state>
           </provider>
@@ -168,6 +168,11 @@
               <item name="PlantTreaterServer" type="b2602c69:ProjectViewProjectNode" />
               <item name="PlantTreaterServer" type="462c0819:PsiDirectoryNode" />
               <item name="modules" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PlantTreaterServer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PlantTreaterServer" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="PlantTreaterServer" type="b2602c69:ProjectViewProjectNode" />
@@ -554,7 +559,14 @@
       <option name="project" value="LOCAL" />
       <updated>1527206149352</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="water home trial commit 2. gun 4 water no interval">
+      <created>1527206530118</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1527206530118</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -693,8 +705,8 @@
         <state relative-caret-position="275">
           <caret line="11" column="38" lean-forward="false" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="38" />
           <folding>
-            <marker date="1527206520865" expanded="true" signature="44967:44984" ph="..." />
-            <marker date="1527206520865" expanded="true" signature="44967:45015" ph="..." />
+            <marker date="1527206634514" expanded="true" signature="45576:45593" ph="..." />
+            <marker date="1527206634514" expanded="true" signature="45576:45624" ph="..." />
           </folding>
         </state>
       </provider>
@@ -704,8 +716,8 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1527206520865" expanded="true" signature="44967:44984" ph="..." />
-            <marker date="1527206520865" expanded="true" signature="44967:45015" ph="..." />
+            <marker date="1527206634514" expanded="true" signature="45576:45593" ph="..." />
+            <marker date="1527206634514" expanded="true" signature="45576:45624" ph="..." />
           </folding>
         </state>
       </provider>
@@ -715,8 +727,8 @@
         <state relative-caret-position="350">
           <caret line="14" column="38" lean-forward="false" selection-start-line="14" selection-start-column="38" selection-end-line="14" selection-end-column="38" />
           <folding>
-            <marker date="1527206520865" expanded="true" signature="44967:44984" ph="..." />
-            <marker date="1527206520865" expanded="true" signature="44967:45015" ph="..." />
+            <marker date="1527206634514" expanded="true" signature="45576:45593" ph="..." />
+            <marker date="1527206634514" expanded="true" signature="45576:45624" ph="..." />
           </folding>
         </state>
       </provider>
@@ -794,8 +806,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/PlantTreaterServer.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="120" column="36" lean-forward="true" selection-start-line="120" selection-start-column="36" selection-end-line="120" selection-end-column="36" />
+        <state relative-caret-position="300">
+          <caret line="117" column="33" lean-forward="false" selection-start-line="117" selection-start-column="33" selection-end-line="117" selection-end-column="33" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
           </folding>
