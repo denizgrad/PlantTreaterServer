@@ -1,2 +1,2 @@
 #!/bin/sh
-sudo python ./water_module.py
+sudo python /opt/PlantTreater/PlantTreaterServer/modules/water_module.py
