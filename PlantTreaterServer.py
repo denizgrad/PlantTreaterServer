@@ -115,12 +115,8 @@ def water():
     app.logger.info('watering')
     #water_module.water()
 
-    process = subprocess.Popen([os.path.join('modules', 'watering.sh')], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-    process.wait()  # Wait for process to complete.
+    os.system("./modules/script.sh")
 
-    # iterate on the stdout line by line
-    for line in process.stdout.readlines():
-        print(line)
 
     app.logger.info('watering done')
     sensors = sensorsInit()

@@ -20,8 +20,8 @@
       <file leaf-file-name="PlantTreaterServer.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/PlantTreaterServer.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2350">
-              <caret line="26" column="5" lean-forward="false" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
+            <state relative-caret-position="375">
+              <caret line="120" column="36" lean-forward="true" selection-start-line="120" selection-start-column="36" selection-end-line="120" selection-end-column="36" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
               </folding>
@@ -91,11 +91,11 @@
       <file leaf-file-name="workspace.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="325">
-              <caret line="13" column="38" lean-forward="false" selection-start-line="13" selection-start-column="38" selection-end-line="13" selection-end-column="38" />
+            <state relative-caret-position="350">
+              <caret line="14" column="38" lean-forward="false" selection-start-line="14" selection-start-column="38" selection-end-line="14" selection-end-column="38" />
               <folding>
-                <marker date="1527206075674" expanded="true" signature="44515:44532" ph="..." />
-                <marker date="1527206075674" expanded="true" signature="44515:44563" ph="..." />
+                <marker date="1527206520865" expanded="true" signature="44967:44984" ph="..." />
+                <marker date="1527206520865" expanded="true" signature="44967:45015" ph="..." />
               </folding>
             </state>
           </provider>
@@ -547,7 +547,14 @@
       <option name="project" value="LOCAL" />
       <updated>1527205619640</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="water home trial commit 2. gun 4 water no interval">
+      <created>1527206149352</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1527206149352</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -686,8 +693,8 @@
         <state relative-caret-position="275">
           <caret line="11" column="38" lean-forward="false" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="38" />
           <folding>
-            <marker date="1527206075674" expanded="true" signature="44515:44532" ph="..." />
-            <marker date="1527206075674" expanded="true" signature="44515:44563" ph="..." />
+            <marker date="1527206520865" expanded="true" signature="44967:44984" ph="..." />
+            <marker date="1527206520865" expanded="true" signature="44967:45015" ph="..." />
           </folding>
         </state>
       </provider>
@@ -697,19 +704,19 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1527206075674" expanded="true" signature="44515:44532" ph="..." />
-            <marker date="1527206075674" expanded="true" signature="44515:44563" ph="..." />
+            <marker date="1527206520865" expanded="true" signature="44967:44984" ph="..." />
+            <marker date="1527206520865" expanded="true" signature="44967:45015" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="13" column="38" lean-forward="false" selection-start-line="13" selection-start-column="38" selection-end-line="13" selection-end-column="38" />
+        <state relative-caret-position="350">
+          <caret line="14" column="38" lean-forward="false" selection-start-line="14" selection-start-column="38" selection-end-line="14" selection-end-column="38" />
           <folding>
-            <marker date="1527206075674" expanded="true" signature="44515:44532" ph="..." />
-            <marker date="1527206075674" expanded="true" signature="44515:44563" ph="..." />
+            <marker date="1527206520865" expanded="true" signature="44967:44984" ph="..." />
+            <marker date="1527206520865" expanded="true" signature="44967:45015" ph="..." />
           </folding>
         </state>
       </provider>
@@ -787,8 +794,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/PlantTreaterServer.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2350">
-          <caret line="26" column="5" lean-forward="false" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
+        <state relative-caret-position="375">
+          <caret line="120" column="36" lean-forward="true" selection-start-line="120" selection-start-column="36" selection-end-line="120" selection-end-column="36" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
           </folding>
