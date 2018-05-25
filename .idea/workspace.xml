@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="7dbdc904-78af-4942-ab88-ad8d1daa81b8" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/PlantTreaterServer.py" afterPath="$PROJECT_DIR$/PlantTreaterServer.py" />
+      <change beforePath="$PROJECT_DIR$/modules/watering.sh" afterPath="$PROJECT_DIR$/modules/watering.sh" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -17,7 +17,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
-      <file leaf-file-name="PlantTreaterServer.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PlantTreaterServer.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/PlantTreaterServer.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="300">
@@ -29,11 +29,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="watering.sh" pinned="false" current-in-tab="false">
+      <file leaf-file-name="watering.sh" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/modules/watering.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="9" lean-forward="false" selection-start-line="0" selection-start-column="9" selection-end-line="0" selection-end-column="9" />
+            <state relative-caret-position="25">
+              <caret line="1" column="14" lean-forward="false" selection-start-line="1" selection-start-column="14" selection-end-line="1" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -94,8 +94,8 @@
             <state relative-caret-position="350">
               <caret line="14" column="38" lean-forward="false" selection-start-line="14" selection-start-column="38" selection-end-line="14" selection-end-column="38" />
               <folding>
-                <marker date="1527206634514" expanded="true" signature="45576:45593" ph="..." />
-                <marker date="1527206634514" expanded="true" signature="45576:45624" ph="..." />
+                <marker date="1527206756414" expanded="true" signature="45908:45925" ph="..." />
+                <marker date="1527206756414" expanded="true" signature="45908:45956" ph="..." />
               </folding>
             </state>
           </provider>
@@ -122,8 +122,8 @@
         <option value="$PROJECT_DIR$/templates/soil.html" />
         <option value="$PROJECT_DIR$/watering.sh" />
         <option value="$PROJECT_DIR$/water_module.py" />
-        <option value="$PROJECT_DIR$/modules/watering.sh" />
         <option value="$PROJECT_DIR$/PlantTreaterServer.py" />
+        <option value="$PROJECT_DIR$/modules/watering.sh" />
       </list>
     </option>
   </component>
@@ -566,7 +566,21 @@
       <option name="project" value="LOCAL" />
       <updated>1527206530118</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="water home trial commit 2. gun 4 water no interval">
+      <created>1527206638121</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1527206638121</updated>
+    </task>
+    <task id="LOCAL-00047" summary="water home trial commit 2. gun 4 water no interval">
+      <created>1527206763924</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1527206763924</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -705,8 +719,8 @@
         <state relative-caret-position="275">
           <caret line="11" column="38" lean-forward="false" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="38" />
           <folding>
-            <marker date="1527206634514" expanded="true" signature="45576:45593" ph="..." />
-            <marker date="1527206634514" expanded="true" signature="45576:45624" ph="..." />
+            <marker date="1527206756414" expanded="true" signature="45908:45925" ph="..." />
+            <marker date="1527206756414" expanded="true" signature="45908:45956" ph="..." />
           </folding>
         </state>
       </provider>
@@ -716,8 +730,8 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1527206634514" expanded="true" signature="45576:45593" ph="..." />
-            <marker date="1527206634514" expanded="true" signature="45576:45624" ph="..." />
+            <marker date="1527206756414" expanded="true" signature="45908:45925" ph="..." />
+            <marker date="1527206756414" expanded="true" signature="45908:45956" ph="..." />
           </folding>
         </state>
       </provider>
@@ -727,8 +741,8 @@
         <state relative-caret-position="350">
           <caret line="14" column="38" lean-forward="false" selection-start-line="14" selection-start-column="38" selection-end-line="14" selection-end-column="38" />
           <folding>
-            <marker date="1527206634514" expanded="true" signature="45576:45593" ph="..." />
-            <marker date="1527206634514" expanded="true" signature="45576:45624" ph="..." />
+            <marker date="1527206756414" expanded="true" signature="45908:45925" ph="..." />
+            <marker date="1527206756414" expanded="true" signature="45908:45956" ph="..." />
           </folding>
         </state>
       </provider>
@@ -796,14 +810,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/modules/watering.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="9" lean-forward="false" selection-start-line="0" selection-start-column="9" selection-end-line="0" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/PlantTreaterServer.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
@@ -811,6 +817,14 @@
           <folding>
             <element signature="e#0#23#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/watering.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="25">
+          <caret line="1" column="14" lean-forward="false" selection-start-line="1" selection-start-column="14" selection-end-line="1" selection-end-column="14" />
+          <folding />
         </state>
       </provider>
     </entry>
